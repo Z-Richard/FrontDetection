@@ -50,19 +50,19 @@ Corresponding input and label files are assumend to have the same name except fo
 
 Potential command line command, assuming you are currently located in the Scripts_and_Examples Folder:
 
-Create_Output_Samples_raw.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder>
+`Create_Output_Samples_raw.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder>`
 
-Create_Climatology.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder>
+`Create_Climatology.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder>`
 
-Calculate_CSI.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder> [--preCalc]
+`Calculate_CSI.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder> [--preCalc]`
 
-Create_Cross_Section.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <variable> <path/to/DataFolder> <path/to/LabelFolder> <path/to/variableFolder> [--preCalc]
+`Create_Cross_Section.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <variable> <path/to/DataFolder> <path/to/LabelFolder> <path/to/variableFolder> [--preCalc]`
 
-Create_Output_Samples.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder> [--preCalc]
+`Create_Output_Samples.sh path/to/network/<network_name>.pth  /path/to/network/data_set_info.txt <output_name> <path/to/DataFolder> <path/to/LabelFolder> [--preCalc]`
 
-<variable> is a string corresponding to the variable that should be extracted from the ERA5 file, with a corresponding suffix to detail which type of ERA5 File should be used. t_ml for example extracts t from a file named mlYYYYMMDD_HH.nc, while q_z extracts q from a file named ZYYYYMMDD_HH.nc. Adding a "d" as a prefix uses the derivative instead (e.g. dt or dq). Potential suffixes are : _ml , _z and _b. Note that at this point only a very restricted selection of variables, files and height levels is directly supported (e.g. t, q, rq, ept, wind, tfp; with most of these being available for the _b suffix). This will be adjusted in a future release.
+`variable` is a string corresponding to the variable that should be extracted from the ERA5 file, with a corresponding suffix to detail which type of ERA5 File should be used. t_ml for example extracts t from a file named mlYYYYMMDD_HH.nc, while q_z extracts q from a file named ZYYYYMMDD_HH.nc. Adding a "d" as a prefix uses the derivative instead (e.g. dt or dq). Potential suffixes are : _ml , _z and _b. Note that at this point only a very restricted selection of variables, files and height levels is directly supported (e.g. t, q, rq, ept, wind, tfp; with most of these being available for the _b suffix). This will be adjusted in a future release.
 
-<variableFolder> is a folder containing ERA5 data, where the corresponding <variable> should be extracted from. 
+`variableFolder` is a folder containing ERA5 data, where the corresponding <variable> should be extracted from. 
 The data is assumed to be organized in multiple folders <variableFolder/YYYY/MM/dataname>. Note that these <dataname> is assumend to be prefixed by the suffix of <variable> (e.g. <variableFolder>/2016/02/ml20160201_00.nc is the file to extract t_ml at 1st February 2016 , 00 UTC)
 
 For best results we propose to use larger input dimensions, to reduce the effect of critical information being cropped.
